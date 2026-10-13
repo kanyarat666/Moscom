@@ -1,0 +1,18 @@
+[
+  {
+    "_comment": "ตัวอย่างรูปแบบที่ถูกต้อง — อย่าใช้เป็นข้อมูลจริง",
+    "component_id": "00000000-0000-0000-0000-000000000001",
+    "game_name": "ตัวอย่างเกม",
+    "resolution": "1080p",
+    "settings": "High",
+    "api": "DX12",
+    "fps_avg": 0,
+    "fps_1_low": 0,
+    "benchmark_type": "actual",
+    "cpu_used": "ตัวอย่าง CPU",
+    "gpu_used": "ตัวอย่าง GPU",
+    "source_url": "https://example.com/benchmark/sample",
+    "tested_at": "2026-01-01",
+    "notes": "[ข้อมูลตัวอย่าง - ไม่ใช่ข้อมูลจริง] ใช้สำหรับทดสอบระบบ import เท่านั้น"
+  }
+]
