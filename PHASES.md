@@ -5,27 +5,34 @@
 ## เฟส 1: โครงสร้างเว็บไซต์และหน้า UI ✅
 
 - Next.js 15 App Router + TypeScript + Tailwind
-- หน้า Home, Components, Builder, Compare, Budget, About
 - ชื่อเว็บ: **SpecPilot**
+- หน้า Home, Components, Builder, Compare, Budget, About
 - ข้อมูลตัวอย่างติดป้ายชัดเจน
 - localStorage สำหรับบันทึกสเปก
 
-## เฟส 2: Schema ฐานข้อมูลและระบบนำเข้าข้อมูล 🔄
+## เฟส 2: Schema ฐานข้อมูลและระบบนำเข้าข้อมูล ✅ (โครงสร้าง)
 
-### เสร็จแล้ว
-- [x] Schema SQL ครบ (components + specs + prices + benchmarks)
+- [x] Schema SQL ครบ
 - [x] กฎบังคับ source_url + checked_at
-- [x] TypeScript types ตรง Schema (`src/lib/db-types.ts`)
-- [x] ระบบ validate ก่อน import (`scripts/import/validate.ts`)
-- [x] ตัวอย่าง JSON รูปแบบถูกต้อง
-- [x] เอกสาร supabase/ และ scripts/import/
+- [x] TypeScript types + validate import
+- [ ] รันบน Supabase จริง (รอคุณสร้างโปรเจกต์)
 
-### ยังไม่ทำ (ต้องมี Supabase project จริง)
-- [ ] รัน migration บน Supabase จริง
-- [ ] เขียน importer ที่ insert ลง DB
-- [ ] นำเข้าข้อมูลจริงจากแหล่งที่อนุญาต
+**SQL ที่ต้องรันใน Supabase:** ดูไฟล์
+`supabase/migrations/001_initial_schema.sql`
 
-## เฟส 3: ระบบค้นหาและจัดสเปก ⬜
+## เฟส 3: ระบบค้นหาและจัดสเปก 🔄
+
+- [x] Compatibility Engine (กฎระบบ)
+  - Socket CPU ↔ Motherboard
+  - RAM type ↔ Motherboard
+  - GPU length ↔ Case
+  - Cooler socket + TDP ↔ CPU
+  - PSU wattage estimate
+  - Form factor MB ↔ Case
+- [x] แสดงผลในหน้า Builder
+- [ ] เชื่อมข้อมูลจาก Supabase (เมื่อมี DB จริง)
+- [ ] ค้นหา/กรองจาก DB จริง
+
 ## เฟส 4: ระบบราคาและ Benchmark ⬜
 ## เฟส 5: ระบบ AI Assistant ⬜
 ## เฟส 6: การทดสอบและ Deploy ⬜
