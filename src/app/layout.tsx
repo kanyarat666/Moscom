@@ -4,7 +4,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
-  title: "Moscom - จัดสเปกคอมพิวเตอร์ภาษาไทย",
+  title: "SpecPilot - จัดสเปกคอมพิวเตอร์ภาษาไทย",
   description:
     "เว็บไซต์ค้นหา เปรียบเทียบ และจัดสเปกคอมพิวเตอร์ สำหรับตลาดไทย เน้นข้อมูลที่ตรวจสอบแหล่งที่มาได้",
 };

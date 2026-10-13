@@ -44,7 +44,7 @@ export default function HomePage() {
           <div className="max-w-3xl">
             <div className="inline-flex items-center gap-2 bg-white/10 text-sm px-3 py-1 rounded-full mb-6">
               <Cpu className="w-4 h-4" />
-              <span>Thai PC Builder & Hardware Database</span>
+              <span>SpecPilot — Thai PC Builder & Hardware Database</span>
             </div>
             <h1 className="text-3xl md:text-5xl font-bold leading-tight mb-4">
               จัดสเปกคอมพิวเตอร์
@@ -73,7 +73,7 @@ export default function HomePage() {
           <div className="flex items-start gap-3 text-amber-800">
             <AlertTriangle className="w-5 h-5 shrink-0 mt-0.5" />
             <p className="text-sm leading-relaxed">
-              <strong>สถานะปัจจุบัน (เฟส 1):</strong> ระบบใช้ข้อมูลตัวอย่างเท่านั้น
+              <strong>สถานะปัจจุบัน (เฟส 1 เสร็จ / กำลังเข้าเฟส 2):</strong> ระบบใช้ข้อมูลตัวอย่างเท่านั้น
               ราคาและสเปกที่แสดงไม่ใช่ข้อมูลจริง
               จะเชื่อมต่อฐานข้อมูลจริงที่มีแหล่งที่มาในเฟสถัดไป
             </p>

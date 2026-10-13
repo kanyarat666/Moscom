@@ -4,10 +4,10 @@ export default function AboutPage() {
   return (
     <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
       <h1 className="text-2xl md:text-3xl font-bold text-slate-900 mb-4">
-        เกี่ยวกับ Moscom
+        เกี่ยวกับ SpecPilot
       </h1>
       <p className="text-slate-600 leading-relaxed mb-8">
-        Moscom เป็นโปรเจกต์ส่วนตัวสำหรับสร้างเว็บไซต์จัดสเปกคอมพิวเตอร์ภาษาไทย
+        SpecPilot เป็นโปรเจกต์ส่วนตัวสำหรับสร้างเว็บไซต์จัดสเปกคอมพิวเตอร์ภาษาไทย
         ที่เน้นความโปร่งใสของข้อมูลและการใช้งานง่ายโดยไม่ต้องสมัครสมาชิก
       </p>
 
@@ -48,10 +48,10 @@ export default function AboutPage() {
         <div className="bg-amber-50 border border-amber-200 rounded-xl p-4 flex items-start gap-3">
           <AlertTriangle className="w-5 h-5 text-amber-600 shrink-0 mt-0.5" />
           <div className="text-sm text-amber-800">
-            <p className="font-semibold mb-1">เฟส 1 — โครงสร้างและ UI</p>
+            <p className="font-semibold mb-1">เฟส 1 เสร็จแล้ว — กำลังเข้าเฟส 2</p>
             <p>
               ขณะนี้ใช้ข้อมูลตัวอย่างเท่านั้น เพื่อสร้างและทดสอบหน้าเว็บ
-              ยังไม่มีฐานข้อมูลจริง ราคาจริง หรือ Benchmark จริง
+              กำลังออกแบบ Schema ฐานข้อมูลจริง
             </p>
           </div>
         </div>
@@ -63,8 +63,8 @@ export default function AboutPage() {
           แผนพัฒนา
         </h2>
         <ol className="space-y-2 text-slate-700 list-decimal list-inside">
-          <li>เฟส 1: โครงสร้างเว็บไซต์และหน้า UI (กำลังทำ)</li>
-          <li>เฟส 2: Schema ฐานข้อมูลและระบบนำเข้าข้อมูล</li>
+          <li>เฟส 1: โครงสร้างเว็บไซต์และหน้า UI ✅</li>
+          <li>เฟส 2: Schema ฐานข้อมูลและระบบนำเข้าข้อมูล (กำลังทำ)</li>
           <li>เฟส 3: ระบบค้นหาและจัดสเปก (Compatibility Engine)</li>
           <li>เฟส 4: ระบบราคาและ Benchmark</li>
           <li>เฟส 5: ระบบ AI Assistant</li>

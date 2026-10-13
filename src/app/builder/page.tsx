@@ -16,7 +16,7 @@ import type { AnyComponent, ComponentCategory, PCBuild } from "@/lib/types";
 import { CATEGORY_LABELS } from "@/lib/types";
 import { AlertTriangle, Trash2, Save } from "lucide-react";
 
-const STORAGE_KEY = "moscom-pc-build";
+const STORAGE_KEY = "specpilot-pc-build";
 
 const categoryOptions: {
   key: keyof PCBuild;

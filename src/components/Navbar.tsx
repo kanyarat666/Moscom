@@ -25,7 +25,7 @@ export default function Navbar() {
         <div className="flex items-center justify-between h-16">
           <Link href="/" className="flex items-center gap-2 font-bold text-xl text-primary-700">
             <Cpu className="w-7 h-7" />
-            <span>Moscom</span>
+            <span>SpecPilot</span>
           </Link>
 
           {/* Desktop nav */}

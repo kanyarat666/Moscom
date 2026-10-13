@@ -6,7 +6,7 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div>
-            <h3 className="text-white font-bold text-lg mb-3">Moscom</h3>
+            <h3 className="text-white font-bold text-lg mb-3">SpecPilot</h3>
             <p className="text-sm leading-relaxed">
               เว็บไซต์จัดสเปกคอมพิวเตอร์ภาษาไทย
               สำหรับค้นหา เปรียบเทียบ และจัดสเปก
@@ -51,7 +51,7 @@ export default function Footer() {
         </div>
 
         <div className="border-t border-slate-700 mt-8 pt-6 text-center text-sm text-slate-500">
-          © {new Date().getFullYear()} Moscom — Thai PC Builder & Hardware Database
+          © {new Date().getFullYear()} SpecPilot — Thai PC Builder & Hardware Database
         </div>
       </div>
     </footer>
