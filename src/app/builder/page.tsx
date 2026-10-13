@@ -1,7 +1,8 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import ComponentCard from "@/components/ComponentCard";
+import CompatibilityPanel from "@/components/CompatibilityPanel";
 import {
   sampleCPUs,
   sampleGPUs,
@@ -12,6 +13,7 @@ import {
   sampleCases,
   sampleCoolers,
 } from "@/lib/sample-data";
+import { checkCompatibility } from "@/lib/compatibility";
 import type { AnyComponent, ComponentCategory, PCBuild } from "@/lib/types";
 import { CATEGORY_LABELS } from "@/lib/types";
 import { AlertTriangle, Trash2, Save } from "lucide-react";
@@ -38,7 +40,6 @@ export default function BuilderPage() {
   const [activeCategory, setActiveCategory] = useState<keyof PCBuild>("cpu");
   const [savedMessage, setSavedMessage] = useState("");
 
-  // โหลดจาก localStorage
   useEffect(() => {
     try {
       const raw = localStorage.getItem(STORAGE_KEY);
@@ -49,6 +50,8 @@ export default function BuilderPage() {
       // ignore
     }
   }, []);
+
+  const compatResult = useMemo(() => checkCompatibility(build), [build]);
 
   const selectComponent = (component: AnyComponent) => {
     const key = component.category as keyof PCBuild;
@@ -89,6 +92,8 @@ export default function BuilderPage() {
   const activeItems =
     categoryOptions.find((c) => c.key === activeCategory)?.items ?? [];
 
+  const hasAnyPart = Object.keys(build).length > 0;
+
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
       <div className="mb-8">
@@ -103,18 +108,18 @@ export default function BuilderPage() {
       <div className="bg-amber-50 border border-amber-200 rounded-xl p-4 mb-6 flex items-start gap-3">
         <AlertTriangle className="w-5 h-5 text-amber-600 shrink-0 mt-0.5" />
         <p className="text-sm text-amber-800">
-          <strong>เฟส 1:</strong> ยังไม่มีการตรวจความเข้ากันได้จริง
-          และราคาเป็นตัวอย่างเท่านั้น จะเพิ่ม Compatibility Engine ในเฟส 3
+          <strong>เฟส 3:</strong> มีระบบตรวจความเข้ากันได้ด้วยกฎระบบแล้ว
+          แต่ราคาและสเปกยังเป็นข้อมูลตัวอย่าง
         </p>
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-        {/* สเปกปัจจุบัน */}
-        <div className="lg:col-span-1">
-          <div className="card p-5 sticky top-24">
-            <h2 className="font-semibold text-lg mb-4">สเปกปัจจุบัน</h2>
+        {/* สเปกปัจจุบัน + ความเข้ากันได้ */}
+        <div className="lg:col-span-1 space-y-4">
+          <div className="card p-5 sticky top-24 space-y-4">
+            <h2 className="font-semibold text-lg">สเปกปัจจุบัน</h2>
 
-            <div className="space-y-3 mb-6">
+            <div className="space-y-3">
               {categoryOptions.map(({ key, category }) => {
                 const item = build[key];
                 return (
@@ -145,7 +150,7 @@ export default function BuilderPage() {
               })}
             </div>
 
-            <div className="border-t border-slate-200 pt-4 mb-4">
+            <div className="border-t border-slate-200 pt-4">
               <div className="flex justify-between items-baseline">
                 <span className="text-slate-600">งบประมาณรวม</span>
                 <span className="text-xl font-bold text-slate-900">
@@ -178,9 +183,13 @@ export default function BuilderPage() {
             </div>
 
             {savedMessage && (
-              <p className="text-sm text-green-600 mt-3 text-center">
-                {savedMessage}
-              </p>
+              <p className="text-sm text-green-600 text-center">{savedMessage}</p>
+            )}
+
+            {hasAnyPart && (
+              <div className="pt-2">
+                <CompatibilityPanel result={compatResult} />
+              </div>
             )}
           </div>
         </div>
